@@ -1,6 +1,5 @@
 local plugins = {
-  
-	{"catppuccin/nvim", name = "catppuccin", priority = 1000},
+  {"catppuccin/nvim", name = "catppuccin", priority = 1000},
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim' }
@@ -32,12 +31,32 @@ local plugins = {
     end,
   },
   {
-	  'akinsho/toggleterm.nvim', 
+    'akinsho/toggleterm.nvim', 
     version = "*", 
     config = function() 
       require("toggleterm").setup{
         direction = "float"
       }
+    end
+  },
+  {
+    "tanvirtin/vgit.nvim",
+    dependencies = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function() 
+      require('vgit').setup {}
+    end
+  },
+  {
+		"ms-jpq/coq_nvim",
+    dependencies = {
+      "ms-jpq/coq.artifact"
+    },
+    config = function()
+       vim.cmd("COQnow") 
+
+      vim.g.coq_settings = {["keymap.jump_to_mark"] = ""}
     end
   }
 }
