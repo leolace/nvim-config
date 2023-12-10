@@ -5,5 +5,4 @@ require("core.plugins")
 require("core.lspconfig")
 require("core.keymaps")
 
-require("catppuccin").setup()
-vim.cmd.colorscheme "minimal"
+vim.cmd.colorscheme "tokyonight-night"

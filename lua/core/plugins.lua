@@ -1,5 +1,4 @@
 local plugins = {
-  {"catppuccin/nvim", name = "catppuccin"},
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim' }
@@ -13,7 +12,7 @@ local plugins = {
       configs.setup({
         ensure_installed = { "lua", "vim", "vimdoc", "javascript", "html", "typescript", "tsx" },
         highlight = { enable = true },
-        indent = { enable = true },  
+        indent = { enable = true },
       })
   end
   },
@@ -27,13 +26,17 @@ local plugins = {
       "nvim-tree/nvim-web-devicons",
     },
     config = function()
-      require("nvim-tree").setup {}
+      require("nvim-tree").setup {
+        view = {
+          width = 30,
+        },
+      }
     end,
   },
   {
-    'akinsho/toggleterm.nvim', 
-    version = "*", 
-    config = function() 
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    config = function()
       require("toggleterm").setup{
         direction = "float"
       }
@@ -44,7 +47,7 @@ local plugins = {
     dependencies = {
       'nvim-lua/plenary.nvim'
     },
-    config = function() 
+    config = function()
       require('vgit').setup {}
     end
   },
@@ -54,16 +57,25 @@ local plugins = {
       "ms-jpq/coq.artifact"
     },
     config = function()
-       vim.cmd("COQnow") 
-
+      vim.cmd("COQnow")
       vim.g.coq_settings = {["keymap.jump_to_mark"] = ""}
     end
   },
   {
-    "yazeed1s/minimal.nvim"
+    "romgrk/barbar.nvim"
   },
   {
-    "romgrk/barbar.nvim"
+    "tpope/vim-surround"
+  },
+  {
+    "folke/tokyonight.nvim"
+  },
+  {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+    config = function()
+      require('lualine').setup {}
+    end
   }
 }
 
