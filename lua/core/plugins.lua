@@ -90,12 +90,11 @@ local plugins = {
   {
     "ahmedkhalf/project.nvim",
     config = function()
-      require("project_nvim").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the desault settings
-        -- refer to the configuration section below
-      }
+      require("project_nvim").setup {}
     end
+  },
+  {
+    "Raimondi/delimitMate"
   }
 }
 

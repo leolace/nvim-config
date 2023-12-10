@@ -11,10 +11,16 @@ local on_attach = function(_, _)
 end
 
 require("mason-lspconfig").setup_handlers {
-  function(server_name) -- default handler (optional)
+  function(server_name)
     coq.lsp_ensure_capabilities()
     require("lspconfig")[server_name].setup {
       on_attach = on_attach
     }
   end,
 }
+
+local signs = {  Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
