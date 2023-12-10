@@ -6,4 +6,4 @@ require("core.lspconfig")
 require("core.keymaps")
 
 require("catppuccin").setup()
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "minimal"

@@ -22,3 +22,16 @@ vim.keymap.set("n", "<leader>e", nvimtree.tree.toggle, {})
 -- toggleterm
 vim.keymap.set("n", "<F7>", ":ToggleTerm<CR>", {})
 
+-- barbar keymaps
+local opts = { noremap = true, silent = true }
+
+vim.keymap.set('n', '<A-l>', '<Cmd>BufferPrevious<CR>', opts)
+vim.keymap.set('n', '<A-h>', '<Cmd>BufferNext<CR>', opts)
+
+-- Re-order to previous/next
+vim.keymap.set('n', '<A-H>', '<Cmd>BufferMovePrevious<CR>', opts)
+vim.keymap.set('n', '<A-L>', '<Cmd>BufferMoveNext<CR>', opts)
+
+-- close buffer
+vim.keymap.set('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+
