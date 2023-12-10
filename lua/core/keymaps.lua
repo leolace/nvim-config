@@ -10,6 +10,15 @@ vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
 vim.keymap.set("n", "<C-h>", ":wincmd h<CR>")
 vim.keymap.set("n", "<C-k>", ":wincmd k<CR>")
 
+-- terminal mode
+vim.keymap.set("t", "<Esc>", "<cmd>:q<CR>")
+
+-- resize window
+vim.keymap.set("n", "<C-]>", "<cmd>:res +2<CR>")
+vim.keymap.set("n", "<C-[>", "<cmd>:res -2<CR>")
+vim.keymap.set("n", "<C-.>", "<cmd>:vertical res +2<CR>")
+vim.keymap.set("n", "<C-,>", "<cmd>:vertical res -2<CR>")
+
 -- LSP
 local builtin = require("telescope.builtin")
 local telescope = require("telescope")

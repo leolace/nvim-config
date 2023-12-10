@@ -48,7 +48,10 @@ local plugins = {
     version = "*",
     config = function()
       require("toggleterm").setup {
-        direction = "float"
+        direction = "float",
+        persist_mode = true,
+        autochdir = true,
+        start_in_insert = false
       }
     end
   },
@@ -75,9 +78,6 @@ local plugins = {
     "romgrk/barbar.nvim"
   },
   {
-    "tpope/vim-surround"
-  },
-  {
     "folke/tokyonight.nvim"
   },
   {
@@ -89,6 +89,7 @@ local plugins = {
   },
   {
     "ahmedkhalf/project.nvim",
+    lazy = true,
     config = function()
       require("project_nvim").setup {}
     end
