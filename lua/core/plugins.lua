@@ -96,6 +96,9 @@ local plugins = {
   },
   {
     "Raimondi/delimitMate"
+  },
+  {
+    "tpope/vim-fugitive"
   }
 }
 
