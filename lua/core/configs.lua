@@ -1,10 +1,15 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.cmd("set number")
 vim.cmd("set noshowmode")
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.bo.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.number = true
+
 vim.opt.laststatus = 3
+vim.opt.cursorline = true
+vim.opt.clipboard:append("unnamedplus")
+vim.opt.mouse = ""
