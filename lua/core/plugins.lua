@@ -107,6 +107,44 @@ local plugins = {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {}
   },
+  {
+    "MunifTanjim/prettier.nvim",
+    config = function()
+      local prettier = require("prettier")
+
+      prettier.setup {
+        bin = 'prettier', -- or `'prettierd'` (v0.23.3+)
+        filetypes = {
+          "css",
+          "graphql",
+          "html",
+          "javascript",
+          "javascriptreact",
+          "json",
+          "less",
+          "markdown",
+          "scss",
+          "typescript",
+          "typescriptreact",
+          "yaml",
+        },
+      }
+    end
+  },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      local null_ls = require("null-ls")
+
+      null_ls.setup {
+        sources = {
+          null_ls.builtins.formatting.prettierd,
+          null_ls.builtins.diagnostics.eslint,
+          null_ls.builtins.completion.spell,
+        },
+      }
+    end
+  },
 
 }
 
