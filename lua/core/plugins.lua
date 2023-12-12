@@ -14,7 +14,7 @@ local plugins = {
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-        ensure_installed = { "lua", "vim", "vimdoc", "javascript", "html", "typescript", "tsx" },
+        ensure_installed = { "lua", "vim", "vimdoc", "javascript", "html", "typescript", "tsx", "markdown" },
         highlight = { enable = true },
         indent = { enable = true },
       })
@@ -91,7 +91,9 @@ local plugins = {
     "ahmedkhalf/project.nvim",
     lazy = true,
     config = function()
-      require("project_nvim").setup {}
+      require("project_nvim").setup {
+        manual_mode = true
+      }
     end
   },
   {
@@ -104,7 +106,8 @@ local plugins = {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {}
-  }
+  },
+
 }
 
 require("lazy").setup(plugins, {})

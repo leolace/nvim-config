@@ -13,3 +13,8 @@ vim.opt.laststatus = 3
 vim.opt.cursorline = true
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.mouse = ""
+vim.opt.smarttab = true
+vim.opt.breakindent = true
+vim.opt.ai = true
+vim.opt.si = true
+vim.opt.wrap = false
