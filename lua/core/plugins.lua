@@ -23,6 +23,12 @@ local plugins = {
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
   { "neovim/nvim-lspconfig" },
+  { "hrsh7th/cmp-nvim-lsp" },
+  { "hrsh7th/cmp-buffer" },
+  { "hrsh7th/cmp-path" },
+  { "hrsh7th/nvim-cmp" },
+  { "dcampos/nvim-snippy" },
+  { "dcampos/cmp-snippy" },
   {
     "nvim-tree/nvim-tree.lua",
     version = "*",
@@ -64,16 +70,16 @@ local plugins = {
       require('vgit').setup {}
     end
   },
-  {
-    "ms-jpq/coq_nvim",
-    dependencies = {
-      "ms-jpq/coq.artifact"
-    },
-    config = function()
-      vim.cmd("COQnow")
-      vim.g.coq_settings = { ["keymap.jump_to_mark"] = "" }
-    end
-  },
+  -- {
+  --   "ms-jpq/coq_nvim",
+  --   dependencies = {
+  --     "ms-jpq/coq.artifact"
+  --   },
+  --   config = function()
+  --     vim.cmd("COQnow")
+  --     vim.g.coq_settings = { ["keymap.jump_to_mark"] = "" }
+  --   end
+  -- },
   {
     "romgrk/barbar.nvim"
   },
@@ -145,6 +151,15 @@ local plugins = {
       }
     end
   },
+  {
+    "RRethy/vim-illuminate",
+    config = function()
+      require('illuminate').configure {
+        delay = 300
+      }
+    end
+
+  }
 
 }
 
