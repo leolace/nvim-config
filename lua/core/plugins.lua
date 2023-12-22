@@ -183,3 +183,6 @@ local plugins = {
 }
 
 require("lazy").setup(plugins, {})
+
+require("core.plugins.cmp")
+

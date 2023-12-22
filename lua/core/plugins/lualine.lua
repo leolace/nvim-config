@@ -10,9 +10,10 @@ local colors = {
 
 local bubbles_theme = {
   normal = {
-    a = { fg = colors.black, bg = colors.violet },
+    a = { fg = colors.grey, bg = colors.violet },
     b = { fg = colors.white, bg = colors.grey },
-    c = { fg = colors.black, bg = colors.black },
+    c = { fg = colors.black, bg = colors.grey },
+    x = { fg = colors.violet, bg = colors.grey }
   },
 
   insert = { a = { fg = colors.black, bg = colors.blue } },
@@ -20,28 +21,42 @@ local bubbles_theme = {
   replace = { a = { fg = colors.black, bg = colors.red } },
 
   inactive = {
-    a = { fg = colors.white, bg = colors.black },
-    b = { fg = colors.white, bg = colors.black },
-    c = { fg = colors.black, bg = colors.black },
+    a = { fg = colors.white, bg = colors.grey },
+    b = { fg = colors.white, bg = colors.grey },
+    c = { fg = colors.black, bg = colors.grey },
   },
 }
 
 require('lualine').setup {
   options = {
     theme = bubbles_theme,
-    component_separators = '|',
-    section_separators = { left = '', right = '' },
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
+    background = "#fff"
   },
   sections = {
-    lualine_a = {
-      { 'mode', separator = { left = '' }, right_padding = 2 },
+    lualine_a = { { 'mode' }, { "fileformat" } },
+    lualine_b = {
+      {
+        'filename',
+        symbols = {
+          modified = " "
+        },
+      },
     },
-    lualine_b = { 'filename', 'branch' },
-    lualine_c = { 'fileformat' },
-    lualine_x = {},
-    lualine_y = { 'filetype', 'progress' },
+    lualine_c = { { "diagnostics" } },
+    lualine_x = { "branch"
+    },
+    lualine_y = {
+      {
+        "diff",
+        symbols = { added = ' ', modified = ' ', removed = ' ' },
+        padding = 2
+      },
+      { 'filetype', padding = { right = 2 } },
+    },
     lualine_z = {
-      { 'location', separator = { right = '' }, left_padding = 2 },
+      'location',
     },
   },
   inactive_sections = {
