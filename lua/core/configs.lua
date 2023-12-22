@@ -18,3 +18,5 @@ vim.opt.breakindent = true
 vim.opt.ai = true
 vim.opt.si = true
 vim.opt.wrap = false
+
+vim.opt.cmdheight = 0

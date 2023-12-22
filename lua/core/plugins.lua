@@ -159,6 +159,25 @@ local plugins = {
       }
     end
 
+  },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {
+    }
+  },
+  {
+    "goolord/alpha-nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
+    end
   }
 
 }
