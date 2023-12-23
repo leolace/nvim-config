@@ -178,11 +178,11 @@ local plugins = {
     config = function()
       require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
     end
-  }
+  },
+  { "ixru/nvim-markdown" }
 
 }
 
 require("lazy").setup(plugins, {})
 
 require("core.plugins.cmp")
-

@@ -16,8 +16,12 @@ vim.keymap.set("t", "<Esc>", "<cmd>:q<CR>")
 -- resize window
 vim.keymap.set("n", "<C-]>", "<cmd>:res +2<CR>")
 vim.keymap.set("n", "<C-[>", "<cmd>:res -2<CR>")
-vim.keymap.set("n", "<C-.>", "<cmd>:vertical res +2<CR>")
 vim.keymap.set("n", "<C-,>", "<cmd>:vertical res -2<CR>")
+vim.keymap.set("n", "<C-.>", "<cmd>:vertical res +2<CR>")
+
+-- move lines
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==") -- move line up
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==") -- move line down
 
 -- LSP
 local builtin = require("telescope.builtin")
