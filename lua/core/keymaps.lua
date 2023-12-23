@@ -23,6 +23,9 @@ vim.keymap.set("n", "<C-.>", "<cmd>:vertical res +2<CR>")
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==") -- move line up
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==") -- move line down
 
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gvgv") -- move line down (visual)
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gvgv") -- move line up (visual)
+
 -- LSP
 local builtin = require("telescope.builtin")
 local telescope = require("telescope")
