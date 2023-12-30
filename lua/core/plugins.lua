@@ -4,6 +4,13 @@ local plugins = {
     tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
+      require("telescope").setup {
+        pickers = {
+          colorscheme = {
+            enable_preview = true
+          }
+        }
+      }
       require("telescope").load_extension("projects")
     end
   },
@@ -70,21 +77,17 @@ local plugins = {
       require('vgit').setup {}
     end
   },
-  -- {
-  --   "ms-jpq/coq_nvim",
-  --   dependencies = {
-  --     "ms-jpq/coq.artifact"
-  --   },
-  --   config = function()
-  --     vim.cmd("COQnow")
-  --     vim.g.coq_settings = { ["keymap.jump_to_mark"] = "" }
-  --   end
-  -- },
   {
     "romgrk/barbar.nvim"
   },
   {
     "folke/tokyonight.nvim"
+  },
+  {
+    "nyoom-engineering/oxocarbon.nvim"
+  },
+  {
+    "rakr/vim-one"
   },
   {
     'nvim-lualine/lualine.nvim',
@@ -179,7 +182,17 @@ local plugins = {
       require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
     end
   },
-  { "ixru/nvim-markdown" }
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
+  { "ixru/nvim-markdown" },
+  { "wakatime/vim-wakatime" }
 
 }
 

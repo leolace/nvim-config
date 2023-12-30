@@ -32,10 +32,22 @@ local telescope = require("telescope")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fp", telescope.extensions.projects.projects, {})
+vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {})
+vim.keymap.set("n", "<leader>fi", builtin.lsp_definitions, {})
+vim.keymap.set("n", "<leader>fc", builtin.colorscheme, {})
 
 -- NVIMTREE
 local nvimtree = require("nvim-tree.api")
 vim.keymap.set("n", "<leader>e", nvimtree.tree.toggle, {})
+
+local function open_tab_silent(node)
+  local api = require("nvim-tree.api")
+  api.node.open.tab(node)
+  vim.cmd.tabprev()
+
+end
+
+vim.keymap.set('n', 'T', open_tab_silent, {})
 
 -- TOGGLETERM
 vim.keymap.set("n", "<F7>", ":ToggleTerm<CR>", {})
@@ -52,3 +64,4 @@ vim.keymap.set('n', '<A-L>', '<Cmd>BufferMoveNext<CR>', opts)
 
 -- close buffer
 vim.keymap.set('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+
