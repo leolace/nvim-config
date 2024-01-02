@@ -70,6 +70,9 @@ cmp.setup {
       })[entry.source.name]
       return vim_item
     end,
+  },
+  completion = {
+    autocomplete = false
   }
 }
 

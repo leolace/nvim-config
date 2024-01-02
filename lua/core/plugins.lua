@@ -57,18 +57,6 @@ local plugins = {
     end,
   },
   {
-    'akinsho/toggleterm.nvim',
-    version = "*",
-    config = function()
-      require("toggleterm").setup {
-        direction = "float",
-        persist_mode = true,
-        autochdir = true,
-        start_in_insert = false
-      }
-    end
-  },
-  {
     "tanvirtin/vgit.nvim",
     dependencies = {
       'nvim-lua/plenary.nvim'
@@ -78,16 +66,16 @@ local plugins = {
     end
   },
   {
-    "romgrk/barbar.nvim"
-  },
-  {
-    "folke/tokyonight.nvim"
+    "romgrk/barbar.nvim",
+    config = function()
+      require("barbar").setup {
+        animation = false,
+        clickable = false
+      }
+    end
   },
   {
     "nyoom-engineering/oxocarbon.nvim"
-  },
-  {
-    "rakr/vim-one"
   },
   {
     'nvim-lualine/lualine.nvim',
@@ -157,9 +145,20 @@ local plugins = {
   {
     "RRethy/vim-illuminate",
     config = function()
-      require('illuminate').configure {
-        delay = 300
-      }
+      require('illuminate').configure {}
+      vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
+      vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
+      vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
+
+      --- auto update the highlight style on colorscheme change
+      vim.api.nvim_create_autocmd({ "ColorScheme" }, {
+        pattern = { "*" },
+        callback = function(ev)
+          vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
+          vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
+          vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
+        end
+      })
     end
 
   },
@@ -168,7 +167,7 @@ local plugins = {
     event = "VeryLazy",
     init = function()
       vim.o.timeout = true
-      vim.o.timeoutlen = 300
+      vim.o.timeoutlen = 500
     end,
     opts = {
     }

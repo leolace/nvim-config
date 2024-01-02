@@ -1,5 +1,5 @@
 vim.cmd("set noshowmode")
-
+vim.loader.enable()
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -22,3 +22,8 @@ vim.opt.si = true
 vim.opt.wrap = false
 
 vim.opt.cmdheight = 0
+vim.o.updatetime = 300
+vim.o.incsearch = false
+vim.wo.signcolumn = 'yes'
+
+vim.opt.guicursor = "n-v-c-i:block"
