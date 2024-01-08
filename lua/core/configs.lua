@@ -26,4 +26,9 @@ vim.o.updatetime = 300
 vim.o.incsearch = false
 vim.wo.signcolumn = 'yes'
 
-vim.opt.guicursor = "n-v-c-i:block"
+vim.opt.preserveindent = true
+vim.opt.breakindent = true
+vim.opt.copyindent = true
+
+vim.diagnostic.config({virtual_text = false})
+
