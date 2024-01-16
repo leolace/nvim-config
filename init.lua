@@ -1,6 +1,4 @@
-require("core.configs")
 require("core.lazy")
+require("core.configs")
 require("core.keymaps")
-
-vim.cmd.colorscheme "oxocarbon"
 

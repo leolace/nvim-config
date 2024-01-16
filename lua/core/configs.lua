@@ -1,7 +1,10 @@
+vim.cmd.colorscheme "oxocarbon"
 vim.cmd("set noshowmode")
+vim.cmd("set scrolloff=8")
 vim.loader.enable()
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.api.nvim_set_hl(0, "Visual", { bg = "#ffffff", fg = "#000000" })
 
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
@@ -30,5 +33,5 @@ vim.opt.preserveindent = true
 vim.opt.breakindent = true
 vim.opt.copyindent = true
 
-vim.diagnostic.config({virtual_text = false})
+vim.diagnostic.config({ virtual_text = false })
 

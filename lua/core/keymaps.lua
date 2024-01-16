@@ -5,6 +5,8 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>w", ":w<CR>")
 vim.keymap.set("n", "<C-u>", ":source %<CR>")
 
+vim.keymap.set("n", "<ESC>", function()end)
+
 -- switch between windows
 vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", { silent = true })
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { silent = true })
