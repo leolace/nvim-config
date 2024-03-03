@@ -1,6 +1,8 @@
-vim.cmd.colorscheme "oxocarbon"
+vim.cmd.colorscheme "moonfly"
 vim.cmd("set noshowmode")
 vim.cmd("set scrolloff=8")
+vim.cmd("set foldmethod=indent")
+vim.cmd("set foldlevelstart=10")
 vim.loader.enable()
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -11,7 +13,7 @@ vim.opt.tabstop = 2
 vim.bo.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.number = true
-vim.opt.relativenumber = true
+
 vim.opt.termguicolors = true
 
 vim.opt.laststatus = 3
@@ -32,6 +34,8 @@ vim.wo.signcolumn = 'yes'
 vim.opt.preserveindent = true
 vim.opt.breakindent = true
 vim.opt.copyindent = true
+
+vim.cmd("set updatetime=700")
 
 vim.diagnostic.config({ virtual_text = false })
 
